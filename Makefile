@@ -16,8 +16,5 @@ switch: move
 	@echo "Rebuilding and switching to the new configuration..."
 	sudo nixos-rebuild switch || { echo "nixos-rebuild failed"; exit 1; }
 
-clean:
-	@echo "Cleaning up..."
-
-.PHONY: all move switch clean
+.PHONY: all move switch
 
