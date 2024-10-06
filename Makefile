@@ -6,10 +6,10 @@ all: switch
 move:
 	@echo "Copying config files to $(NIX_CONF_DIR)..."
 	sudo rsync --archive \
-		    --exclude='.git' \
-				--exclude='Makefile' \
-				--exclude='README*' \
-				$(SOURCE_DIR) $(NIX_CONF_DIR)/
+	 --exclude='.git' \
+	 --exclude='Makefile' \
+	 --exclude='README*' \
+	 $(SOURCE_DIR) $(NIX_CONF_DIR)/
 	@echo "Success!"
 
 switch: move
