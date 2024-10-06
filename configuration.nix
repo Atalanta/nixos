@@ -36,8 +36,16 @@
     (nerdfonts.override { fonts = [ "Inconsolata" ]; })
   ];
 
+  nixpkgs.overlays = [
+    (self: super: {
+      unstable = import (builtins.fetchTarball {
+        url = "https://github.com/NixOS/nixpkgs/archive/nixos-unstable.tar.gz";
+      }) {};
+    })
+  ];
+
   environment.systemPackages = with pkgs; [
-    (import <nixos-unstable> {}).neovim
+    unstable.neovim
     gnumake
     firefox
     gcc
