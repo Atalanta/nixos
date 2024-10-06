@@ -1,11 +1,15 @@
 { config, lib, pkgs, ... }:
 
-{
-  imports =
-    [ ./hardware-configuration.nix ];
+let
+  isLegacyBios = !builtins.pathExists "/sys/firmware/efi";
+  diskConfig = if isLegacyBios then ./disk-bios.nix else ./disk-uefi.nix;
+in
 
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+{
+  imports = [ 
+    ./hardware-configuration.nix
+    diskConfig
+  ];
 
   # networking.hostName = "nixos"; # Define your hostname.
   # time.timeZone = "Europe/Amsterdam";
