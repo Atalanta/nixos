@@ -11,8 +11,8 @@ in
     diskConfig
   ];
 
-  # networking.hostName = "nixos"; # Define your hostname.
-  # time.timeZone = "Europe/Amsterdam";
+  networking.hostName = "lobachevsky";
+  time.timeZone = "Europe/London";
 
   services.xserver.enable = true;
   services.xserver.xkb.options = "ctrl:nocaps";
@@ -66,8 +66,6 @@ in
     rustup
     openconnect
     obsidian
-    xclip
-    xsel
     clipman
     flameshot
   ];

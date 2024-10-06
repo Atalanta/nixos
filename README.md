@@ -7,6 +7,7 @@ a work in progress.  Feel free to crib anything from this that you find useful.
 
 - Distinguishes between legacy bios and UEFI
 - Creates an sns user
+- Sets a hostname and timezone
 - Installs my default i3 window manager
 - Installs tools that I use frequently
 
