@@ -56,6 +56,8 @@
     obsidian
     xclip
     xsel
+    clipman
+    flameshot
   ];
 
   services.xserver.windowManager.i3.enable = true;
